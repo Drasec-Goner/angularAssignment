@@ -1,0 +1,35 @@
+<h2>Edit Person</h2>
+
+<form (ngSubmit)="updatePerson()" #form="ngForm">
+  <label>
+    Name:
+    <input name="name" [(ngModel)]="person.name" required />
+  </label>
+  <br />
+
+  <label>
+    Age:
+    <input name="age" type="number" [(ngModel)]="person.age" required />
+  </label>
+  <br />
+
+  <label>
+    Gender:
+    <select name="gender" [(ngModel)]="person.gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </label>
+  <br />
+
+  <label>
+    Mobile:
+    <input name="mobile" [(ngModel)]="person.mobile" required />
+  </label>
+  <br /><br />
+
+  <button type="submit" [disabled]="form.invalid">Update</button>
+  <a routerLink="/">Cancel</a>
+</form>
